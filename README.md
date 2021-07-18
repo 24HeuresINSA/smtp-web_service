@@ -9,7 +9,7 @@ Define 2 env var :
 
 |Name|Description|Value example|
 |----|-----------|-------------|
-|TOKEN|API key for x-api-key|SecretKey|
+|KEY|API key for x-api-key|SecretKey|
 |CREDENTIALS|json with mail and password to smtp login|{"mail@24hueres.org":"password", "mail2@24heures.org":"pass"}|
 
 ```bash
