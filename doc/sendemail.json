@@ -1,0 +1,9 @@
+{
+    "From": "mail@24heures.org",
+    "To": [
+        "mail@domain.net",
+        "foo@bar.net"
+    ],
+    "Subject": "Testing mail",
+    "Body": "Hello world !"
+}

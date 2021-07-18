@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>24h SMTP Web Service</title>
+    </head>
+
+    <body>
+        <p>This web service permit to simply send mail with http post request</p>
+
+        <p>
+            There is tree entry point :
+            <ul>
+                <li>
+                    /sendemail : a POST http request take json data like :
+                    <span class="json">
+                    {
+                        "From": "mail@24heures.org",
+                        "To": [
+                            "mail@domain.net",
+                            "foo@bar.net"
+                        ],
+                        "Subject": "Testing mail",
+                        "Body": "Hello world !"
+                    }
+                    </span>
+                </li>
+                <li>
+                    /verifyemail: a POST http request take list date like :
+                    <span class="json">
+                        [
+                            "mail@domain.net",
+                            "foo@bar.net"
+                        ]
+                    </span>
+                </li>
+                <li>/getemaillist : a GET http request return list of available sender mails</li>
+            </ul>
+        </p>
+    </body>
+</html>
