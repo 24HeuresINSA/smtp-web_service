@@ -87,12 +87,14 @@ class SmtpSender:
     def sendEmail(self):
         """
         Connect to smtp sever then send email
-        :return:
+        :return: string to say if mail is send or not
         """
-        # TODO : catch error
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL(self.smtpServer, self.port, context=context) as server:
-            server.login(self.senderEmail, self.senderPassword)
+            try:
+                server.login(self.senderEmail, self.senderPassword)
+            except smtplib.SMTPAuthenticationError as e:
+                return "SMTP authentication error... \n \n" + str(e)
             server.send_message(self.message)
         return "Email sent !"
 

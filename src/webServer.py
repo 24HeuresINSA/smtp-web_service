@@ -98,8 +98,8 @@ def sendEmail():
         )
         # Check of wrong emails on receivers list
         if not sender.getWrongEmails():
-            sender.sendEmail()
-            return "Mail sent", 200
+            sendResult = sender.sendEmail()
+            return sendResult, 200 if sendResult == "Email sent !" else 500
         else:
             return "There is some wrong emails, check /verifyemails for more details", 400
     else:
