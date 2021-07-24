@@ -136,5 +136,11 @@ def getEmailList():
     return flask.jsonify(list(credentials.keys()))
 
 
+@app.route("/version", methods=["GET"])
+def version():
+    with open("version", "r") as versionNumber:
+        return versionNumber.read()
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
